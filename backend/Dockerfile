@@ -20,4 +20,10 @@ COPY backend/invoice_agent ./invoice_agent
 COPY --from=dashboard /build/dist /dashboard
 USER app
 EXPOSE 8000
-CMD ["sh", "-c", "python -m migrate && exec uvicorn main:app --host 0.0.0.0 --port 8000"]
+CMD ["sh", "-ec", "\
+    if [ \"${APP_MODE:-local}\" = public_demo ]; then \
+        set -- --no-proxy-headers --no-access-log --limit-concurrency 128 --timeout-keep-alive 5; \
+    else \
+        python -m migrate; \
+    fi; \
+    exec uvicorn main:app --host 0.0.0.0 --port \"${PORT:-8000}\" \"$@\""]
