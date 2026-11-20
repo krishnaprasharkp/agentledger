@@ -1,0 +1,1 @@
+﻿Docker Desktop|6.18.33.2-microsoft-standard-WSL2|16|8161751040|29.9.3

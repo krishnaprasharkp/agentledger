@@ -1,0 +1,1081 @@
+{
+  "seed": 1729,
+  "sizes": {
+    "100": {
+      "records": 100,
+      "heap_bytes": 40960,
+      "index_bytes": 49152,
+      "table_total_bytes": 131072,
+      "queries": {
+        "latest_deployment_executions": {
+          "execution_ms": {
+            "median": 0.038,
+            "p95": 0.065
+          },
+          "planning_ms": {
+            "median": 0.075,
+            "p95": 0.121
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.3882466999348253,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 3
+            },
+            {
+              "node": "Sort",
+              "index": null,
+              "actual_rows": 3
+            },
+            {
+              "node": "Seq Scan",
+              "index": null,
+              "actual_rows": 3
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 6.27,
+              "Total Cost": 6.28,
+              "Plan Rows": 3,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.022,
+              "Actual Total Time": 0.024,
+              "Actual Rows": 3,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 5,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Sort",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 6.27,
+                  "Total Cost": 6.28,
+                  "Plan Rows": 3,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.022,
+                  "Actual Total Time": 0.022,
+                  "Actual Rows": 3,
+                  "Actual Loops": 1,
+                  "Sort Key": [
+                    "occurred_at DESC"
+                  ],
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 26,
+                  "Sort Space Type": "Memory",
+                  "Shared Hit Blocks": 5,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Seq Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "workflow_executions",
+                      "Alias": "workflow_executions",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 6.25,
+                      "Plan Rows": 3,
+                      "Plan Width": 329,
+                      "Actual Startup Time": 0.007,
+                      "Actual Total Time": 0.016,
+                      "Actual Rows": 3,
+                      "Actual Loops": 1,
+                      "Filter": "(deployment_id = '00000000-0000-0000-0000-000000000064'::uuid)",
+                      "Rows Removed by Filter": 97,
+                      "Shared Hit Blocks": 5,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.07,
+            "Triggers": [],
+            "Execution Time": 0.035
+          }
+        },
+        "assessment_window": {
+          "execution_ms": {
+            "median": 0.029,
+            "p95": 0.065
+          },
+          "planning_ms": {
+            "median": 0.0685,
+            "p95": 0.161
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.6763972999760881,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 3
+            },
+            {
+              "node": "Seq Scan",
+              "index": null,
+              "actual_rows": 3
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 0.0,
+              "Total Cost": 6.75,
+              "Plan Rows": 1,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.012,
+              "Actual Total Time": 0.024,
+              "Actual Rows": 3,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 5,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 6.75,
+                  "Plan Rows": 1,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.011,
+                  "Actual Total Time": 0.022,
+                  "Actual Rows": 3,
+                  "Actual Loops": 1,
+                  "Filter": "((occurred_at >= '2026-01-11 00:00:00+00'::timestamp with time zone) AND (occurred_at < '2026-01-21 00:00:00+00'::timestamp with time zone) AND (deployment_id = '00000000-0000-0000-0000-000000000064'::uuid))",
+                  "Rows Removed by Filter": 97,
+                  "Shared Hit Blocks": 5,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.086,
+            "Triggers": [],
+            "Execution Time": 0.092
+          }
+        },
+        "failed_executions_across_deployments": {
+          "execution_ms": {
+            "median": 0.2195,
+            "p95": 0.327
+          },
+          "planning_ms": {
+            "median": 0.05,
+            "p95": 0.093
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.4076556999934837,
+          "nodes": [
+            {
+              "node": "Aggregate",
+              "index": null,
+              "actual_rows": 1
+            },
+            {
+              "node": "Seq Scan",
+              "index": null,
+              "actual_rows": 6
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Aggregate",
+              "Strategy": "Plain",
+              "Partial Mode": "Simple",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 6.5,
+              "Total Cost": 6.51,
+              "Plan Rows": 1,
+              "Plan Width": 8,
+              "Actual Startup Time": 0.201,
+              "Actual Total Time": 0.202,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 5,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 6.5,
+                  "Plan Rows": 1,
+                  "Plan Width": 0,
+                  "Actual Startup Time": 0.027,
+                  "Actual Total Time": 0.198,
+                  "Actual Rows": 6,
+                  "Actual Loops": 1,
+                  "Filter": "((telemetry ->> 'succeeded'::text) = 'false'::text)",
+                  "Rows Removed by Filter": 94,
+                  "Shared Hit Blocks": 5,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.051,
+            "Triggers": [],
+            "Execution Time": 0.218
+          }
+        }
+      }
+    },
+    "1000": {
+      "records": 1000,
+      "heap_bytes": 376832,
+      "index_bytes": 212992,
+      "table_total_bytes": 630784,
+      "queries": {
+        "latest_deployment_executions": {
+          "execution_ms": {
+            "median": 0.139,
+            "p95": 0.222
+          },
+          "planning_ms": {
+            "median": 0.1015,
+            "p95": 0.168
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.8377775999251753,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 25
+            },
+            {
+              "node": "Sort",
+              "index": null,
+              "actual_rows": 25
+            },
+            {
+              "node": "Bitmap Heap Scan",
+              "index": null,
+              "actual_rows": 63
+            },
+            {
+              "node": "Bitmap Index Scan",
+              "index": "ix_workflow_executions_deployment_time",
+              "actual_rows": 63
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 55.71,
+              "Total Cost": 55.78,
+              "Plan Rows": 25,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.098,
+              "Actual Total Time": 0.103,
+              "Actual Rows": 25,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 37,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Sort",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 55.71,
+                  "Total Cost": 55.87,
+                  "Plan Rows": 63,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.097,
+                  "Actual Total Time": 0.099,
+                  "Actual Rows": 25,
+                  "Actual Loops": 1,
+                  "Sort Key": [
+                    "occurred_at DESC"
+                  ],
+                  "Sort Method": "top-N heapsort",
+                  "Sort Space Used": 47,
+                  "Sort Space Type": "Memory",
+                  "Shared Hit Blocks": 37,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Bitmap Heap Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "workflow_executions",
+                      "Alias": "workflow_executions",
+                      "Startup Cost": 4.76,
+                      "Total Cost": 53.94,
+                      "Plan Rows": 63,
+                      "Plan Width": 329,
+                      "Actual Startup Time": 0.031,
+                      "Actual Total Time": 0.069,
+                      "Actual Rows": 63,
+                      "Actual Loops": 1,
+                      "Recheck Cond": "(deployment_id = '00000000-0000-0000-0000-000000000064'::uuid)",
+                      "Rows Removed by Index Recheck": 0,
+                      "Exact Heap Blocks": 35,
+                      "Lossy Heap Blocks": 0,
+                      "Shared Hit Blocks": 37,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0,
+                      "Plans": [
+                        {
+                          "Node Type": "Bitmap Index Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Index Name": "ix_workflow_executions_deployment_time",
+                          "Startup Cost": 0.0,
+                          "Total Cost": 4.75,
+                          "Plan Rows": 63,
+                          "Plan Width": 0,
+                          "Actual Startup Time": 0.019,
+                          "Actual Total Time": 0.019,
+                          "Actual Rows": 63,
+                          "Actual Loops": 1,
+                          "Index Cond": "(deployment_id = '00000000-0000-0000-0000-000000000064'::uuid)",
+                          "Shared Hit Blocks": 2,
+                          "Shared Read Blocks": 0,
+                          "Shared Dirtied Blocks": 0,
+                          "Shared Written Blocks": 0,
+                          "Local Hit Blocks": 0,
+                          "Local Read Blocks": 0,
+                          "Local Dirtied Blocks": 0,
+                          "Local Written Blocks": 0,
+                          "Temp Read Blocks": 0,
+                          "Temp Written Blocks": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.083,
+            "Triggers": [],
+            "Execution Time": 0.123
+          }
+        },
+        "assessment_window": {
+          "execution_ms": {
+            "median": 0.049,
+            "p95": 0.083
+          },
+          "planning_ms": {
+            "median": 0.071,
+            "p95": 0.124
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.35345530009362847,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 21
+            },
+            {
+              "node": "Bitmap Heap Scan",
+              "index": null,
+              "actual_rows": 21
+            },
+            {
+              "node": "Bitmap Index Scan",
+              "index": "ix_workflow_executions_deployment_time",
+              "actual_rows": 21
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 4.56,
+              "Total Cost": 43.16,
+              "Plan Rows": 22,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.017,
+              "Actual Total Time": 0.032,
+              "Actual Rows": 21,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 20,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Bitmap Heap Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 4.56,
+                  "Total Cost": 43.16,
+                  "Plan Rows": 22,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.016,
+                  "Actual Total Time": 0.029,
+                  "Actual Rows": 21,
+                  "Actual Loops": 1,
+                  "Recheck Cond": "((deployment_id = '00000000-0000-0000-0000-000000000064'::uuid) AND (occurred_at >= '2026-01-11 00:00:00+00'::timestamp with time zone) AND (occurred_at < '2026-01-21 00:00:00+00'::timestamp with time zone))",
+                  "Rows Removed by Index Recheck": 0,
+                  "Exact Heap Blocks": 18,
+                  "Lossy Heap Blocks": 0,
+                  "Shared Hit Blocks": 20,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Bitmap Index Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Index Name": "ix_workflow_executions_deployment_time",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 4.55,
+                      "Plan Rows": 22,
+                      "Plan Width": 0,
+                      "Actual Startup Time": 0.01,
+                      "Actual Total Time": 0.01,
+                      "Actual Rows": 21,
+                      "Actual Loops": 1,
+                      "Index Cond": "((deployment_id = '00000000-0000-0000-0000-000000000064'::uuid) AND (occurred_at >= '2026-01-11 00:00:00+00'::timestamp with time zone) AND (occurred_at < '2026-01-21 00:00:00+00'::timestamp with time zone))",
+                      "Shared Hit Blocks": 2,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.068,
+            "Triggers": [],
+            "Execution Time": 0.045
+          }
+        },
+        "failed_executions_across_deployments": {
+          "execution_ms": {
+            "median": 1.811,
+            "p95": 2.544
+          },
+          "planning_ms": {
+            "median": 0.047,
+            "p95": 0.087
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.7747738999314606,
+          "nodes": [
+            {
+              "node": "Aggregate",
+              "index": null,
+              "actual_rows": 1
+            },
+            {
+              "node": "Seq Scan",
+              "index": null,
+              "actual_rows": 90
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Aggregate",
+              "Strategy": "Plain",
+              "Partial Mode": "Simple",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 61.01,
+              "Total Cost": 61.02,
+              "Plan Rows": 1,
+              "Plan Width": 8,
+              "Actual Startup Time": 1.843,
+              "Actual Total Time": 1.844,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 46,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 61.0,
+                  "Plan Rows": 5,
+                  "Plan Width": 0,
+                  "Actual Startup Time": 0.039,
+                  "Actual Total Time": 1.833,
+                  "Actual Rows": 90,
+                  "Actual Loops": 1,
+                  "Filter": "((telemetry ->> 'succeeded'::text) = 'false'::text)",
+                  "Rows Removed by Filter": 910,
+                  "Shared Hit Blocks": 46,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.049,
+            "Triggers": [],
+            "Execution Time": 1.86
+          }
+        }
+      }
+    },
+    "10000": {
+      "records": 10000,
+      "heap_bytes": 3727360,
+      "index_bytes": 1728512,
+      "table_total_bytes": 5496832,
+      "queries": {
+        "latest_deployment_executions": {
+          "execution_ms": {
+            "median": 0.042,
+            "p95": 0.08
+          },
+          "planning_ms": {
+            "median": 0.061,
+            "p95": 0.108
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.3348996000131592,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 25
+            },
+            {
+              "node": "Index Scan",
+              "index": "ix_workflow_executions_deployment_time",
+              "actual_rows": 25
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 0.29,
+              "Total Cost": 59.74,
+              "Plan Rows": 25,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.013,
+              "Actual Total Time": 0.03,
+              "Actual Rows": 25,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 27,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Index Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Scan Direction": "Backward",
+                  "Index Name": "ix_workflow_executions_deployment_time",
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 0.29,
+                  "Total Cost": 1548.47,
+                  "Plan Rows": 651,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.013,
+                  "Actual Total Time": 0.027,
+                  "Actual Rows": 25,
+                  "Actual Loops": 1,
+                  "Index Cond": "(deployment_id = '00000000-0000-0000-0000-000000000064'::uuid)",
+                  "Rows Removed by Index Recheck": 0,
+                  "Shared Hit Blocks": 27,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.061,
+            "Triggers": [],
+            "Execution Time": 0.041
+          }
+        },
+        "assessment_window": {
+          "execution_ms": {
+            "median": 0.187,
+            "p95": 0.323
+          },
+          "planning_ms": {
+            "median": 0.068,
+            "p95": 0.107
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 0.38487870001699775,
+          "nodes": [
+            {
+              "node": "Limit",
+              "index": null,
+              "actual_rows": 200
+            },
+            {
+              "node": "Bitmap Heap Scan",
+              "index": null,
+              "actual_rows": 200
+            },
+            {
+              "node": "Bitmap Index Scan",
+              "index": "ix_workflow_executions_deployment_time",
+              "actual_rows": 200
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 11.0,
+              "Total Cost": 386.7,
+              "Plan Rows": 213,
+              "Plan Width": 329,
+              "Actual Startup Time": 0.049,
+              "Actual Total Time": 0.159,
+              "Actual Rows": 200,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 175,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Bitmap Heap Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 11.0,
+                  "Total Cost": 386.7,
+                  "Plan Rows": 213,
+                  "Plan Width": 329,
+                  "Actual Startup Time": 0.048,
+                  "Actual Total Time": 0.142,
+                  "Actual Rows": 200,
+                  "Actual Loops": 1,
+                  "Recheck Cond": "((deployment_id = '00000000-0000-0000-0000-000000000064'::uuid) AND (occurred_at >= '2026-01-11 00:00:00+00'::timestamp with time zone) AND (occurred_at < '2026-01-21 00:00:00+00'::timestamp with time zone))",
+                  "Rows Removed by Index Recheck": 0,
+                  "Exact Heap Blocks": 172,
+                  "Lossy Heap Blocks": 0,
+                  "Shared Hit Blocks": 175,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "Bitmap Index Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Index Name": "ix_workflow_executions_deployment_time",
+                      "Startup Cost": 0.0,
+                      "Total Cost": 10.95,
+                      "Plan Rows": 213,
+                      "Plan Width": 0,
+                      "Actual Startup Time": 0.024,
+                      "Actual Total Time": 0.024,
+                      "Actual Rows": 200,
+                      "Actual Loops": 1,
+                      "Index Cond": "((deployment_id = '00000000-0000-0000-0000-000000000064'::uuid) AND (occurred_at >= '2026-01-11 00:00:00+00'::timestamp with time zone) AND (occurred_at < '2026-01-21 00:00:00+00'::timestamp with time zone))",
+                      "Shared Hit Blocks": 3,
+                      "Shared Read Blocks": 0,
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Dirtied Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.067,
+            "Triggers": [],
+            "Execution Time": 0.18
+          }
+        },
+        "failed_executions_across_deployments": {
+          "execution_ms": {
+            "median": 21.680999999999997,
+            "p95": 27.152
+          },
+          "planning_ms": {
+            "median": 0.103,
+            "p95": 0.153
+          },
+          "measured_samples": 200,
+          "warmups": 20,
+          "wall_seconds_with_warmup": 6.271631099982187,
+          "nodes": [
+            {
+              "node": "Aggregate",
+              "index": null,
+              "actual_rows": 1
+            },
+            {
+              "node": "Seq Scan",
+              "index": null,
+              "actual_rows": 1014
+            }
+          ],
+          "example_explain": {
+            "Plan": {
+              "Node Type": "Aggregate",
+              "Strategy": "Plain",
+              "Partial Mode": "Simple",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 605.12,
+              "Total Cost": 605.13,
+              "Plan Rows": 1,
+              "Plan Width": 8,
+              "Actual Startup Time": 32.945,
+              "Actual Total Time": 32.947,
+              "Actual Rows": 1,
+              "Actual Loops": 1,
+              "Shared Hit Blocks": 455,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Plans": [
+                {
+                  "Node Type": "Seq Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "workflow_executions",
+                  "Alias": "workflow_executions",
+                  "Startup Cost": 0.0,
+                  "Total Cost": 605.0,
+                  "Plan Rows": 50,
+                  "Plan Width": 0,
+                  "Actual Startup Time": 0.158,
+                  "Actual Total Time": 32.747,
+                  "Actual Rows": 1014,
+                  "Actual Loops": 1,
+                  "Filter": "((telemetry ->> 'succeeded'::text) = 'false'::text)",
+                  "Rows Removed by Filter": 8986,
+                  "Shared Hit Blocks": 455,
+                  "Shared Read Blocks": 0,
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Dirtied Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0
+                }
+              ]
+            },
+            "Planning": {
+              "Shared Hit Blocks": 0,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            },
+            "Planning Time": 0.374,
+            "Triggers": [],
+            "Execution Time": 32.989
+          }
+        }
+      }
+    }
+  },
+  "deployment_count_per_size": 16,
+  "record": "workflow_executions row",
+  "postgresql": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "settings": {
+    "effective_cache_size": "524288 8kB",
+    "jit": "on",
+    "max_parallel_workers_per_gather": "2",
+    "shared_buffers": "16384 8kB",
+    "track_io_timing": "off"
+  }
+}

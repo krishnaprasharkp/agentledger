@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:17
+    container_name: agentledger-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: agentledger
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the local .env}
+      POSTGRES_DB: agentledger
+    ports:
+    - "127.0.0.1:5433:5432"
+    volumes:
+      - agentledger_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agentledger -d agentledger"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: ${COMPOSE_DATABASE_URL:?Set COMPOSE_DATABASE_URL in the local .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+    - "127.0.0.1:8001:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://localhost:8000/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  agentledger_pgdata:

@@ -1,0 +1,25 @@
+# Merge only with the standalone public demo Compose file.
+services:
+  demo-api:
+    build: !reset null
+    image: ${DEMO_API_IMAGE:?Run from a prepared release}
+    pull_policy: never
+    cpus: 0.75
+    mem_limit: 512m
+    memswap_limit: 512m
+    pids_limit: 128
+    security_opt: ["no-new-privileges:true"]
+    logging: &rotated_logs
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  proxy:
+    image: ${DEMO_PROXY_IMAGE:?Run from a prepared release}
+    pull_policy: never
+    cpus: 0.20
+    mem_limit: 128m
+    memswap_limit: 128m
+    pids_limit: 64
+    security_opt: ["no-new-privileges:true"]
+    logging: *rotated_logs

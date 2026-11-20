@@ -1,0 +1,550 @@
+{
+  "python": "3.13.5",
+  "engine": "direct Python, no database queries or provider calls",
+  "maxima": {
+    "net": {
+      "absolute": "0",
+      "relative": "0",
+      "defined": 20,
+      "undefined": 0,
+      "zero": 2
+    },
+    "roi": {
+      "absolute": "3.73965464391539797690814345560437314805354041074895269234699E-28",
+      "relative": "1.47741492754208210551810438784160174383401283655592782464780E-28",
+      "defined": 16,
+      "undefined": 4,
+      "zero": 2
+    },
+    "payback": {
+      "absolute": "1.53846153846153846153846153846153846153846153846153846153846E-27",
+      "relative": "1.29032258064516129032258064516129032258064516129032258064516E-28",
+      "defined": 17,
+      "undefined": 3,
+      "zero": 5
+    },
+    "span": {
+      "absolute": "0",
+      "relative": "0",
+      "defined": 6,
+      "undefined": 0,
+      "zero": 0
+    }
+  },
+  "comparisons": [
+    {
+      "case": "positive",
+      "metric": "net.low",
+      "expected": "13",
+      "actual": "13.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "positive",
+      "metric": "net.high",
+      "expected": "13",
+      "actual": "13.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "positive",
+      "metric": "roi.low",
+      "expected": "0.149425287356321839080459770114942528735632183908045977011494",
+      "actual": "0.1494252873563218390804597701",
+      "absolute_error": "1.49425287356321839080459770114942528735632183908045977011494E-29",
+      "relative_error": "1E-28"
+    },
+    {
+      "case": "positive",
+      "metric": "roi.high",
+      "expected": "0.149425287356321839080459770114942528735632183908045977011494",
+      "actual": "0.1494252873563218390804597701",
+      "absolute_error": "1.49425287356321839080459770114942528735632183908045977011494E-29",
+      "relative_error": "1E-28"
+    },
+    {
+      "case": "positive",
+      "metric": "payback.earliest",
+      "expected": "1",
+      "actual": "1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "positive",
+      "metric": "payback.latest",
+      "expected": "1",
+      "actual": "1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "negative",
+      "metric": "net.low",
+      "expected": "-24",
+      "actual": "-24.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "negative",
+      "metric": "net.high",
+      "expected": "-24",
+      "actual": "-24.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "negative",
+      "metric": "roi.low",
+      "expected": "-0.193548387096774193548387096774193548387096774193548387096774",
+      "actual": "-0.1935483870967741935483870968",
+      "absolute_error": "2.58064516129032258064516129032258064516129032258064516129032E-29",
+      "relative_error": "1.33333333333333333333333333333333333333333333333333333333333E-28"
+    },
+    {
+      "case": "negative",
+      "metric": "roi.high",
+      "expected": "-0.193548387096774193548387096774193548387096774193548387096774",
+      "actual": "-0.1935483870967741935483870968",
+      "absolute_error": "2.58064516129032258064516129032258064516129032258064516129032E-29",
+      "relative_error": "1.33333333333333333333333333333333333333333333333333333333333E-28"
+    },
+    {
+      "case": "negative",
+      "metric": "payback.earliest",
+      "expected": "3.84615384615384615384615384615384615384615384615384615384615",
+      "actual": "3.846153846153846153846153846",
+      "absolute_error": "1.53846153846153846153846153846153846153846153846153846153846E-28",
+      "relative_error": "4E-29"
+    },
+    {
+      "case": "negative",
+      "metric": "payback.latest",
+      "expected": "3.84615384615384615384615384615384615384615384615384615384615",
+      "actual": "3.846153846153846153846153846",
+      "absolute_error": "1.53846153846153846153846153846153846153846153846153846153846E-28",
+      "relative_error": "4E-29"
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "net.low",
+      "expected": "-37",
+      "actual": "-37.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "net.high",
+      "expected": "-37",
+      "actual": "-37.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "roi.low",
+      "expected": "-1",
+      "actual": "-1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "roi.high",
+      "expected": "-1",
+      "actual": "-1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "payback.earliest",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "zero_volume_fixed_costs",
+      "metric": "payback.latest",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "net.low",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "net.high",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "roi.low",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "roi.high",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "payback.earliest",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "exact_break_even",
+      "metric": "payback.latest",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "net.low",
+      "expected": "10",
+      "actual": "10",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "net.high",
+      "expected": "10",
+      "actual": "10",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "roi.low",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "roi.high",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "payback.earliest",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "zero_cost_roi_undefined",
+      "metric": "payback.latest",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "net.low",
+      "expected": "-5",
+      "actual": "-5",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "net.high",
+      "expected": "2",
+      "actual": "2",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "roi.low",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "roi.high",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "payback.earliest",
+      "expected": "0",
+      "actual": "0",
+      "absolute_error": "0",
+      "relative_error": null
+    },
+    {
+      "case": "interval_with_zero_denominator",
+      "metric": "payback.latest",
+      "expected": null,
+      "actual": null
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "net.low",
+      "expected": "-9600",
+      "actual": "-9600.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "net.high",
+      "expected": "49546",
+      "actual": "49546.000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "roi.low",
+      "expected": "-0.228571428571428571428571428571428571428571428571428571428571",
+      "actual": "-0.2285714285714285714285714286",
+      "absolute_error": "2.85714285714285714285714285714285714285714285714285714285714E-29",
+      "relative_error": "1.25E-28"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "roi.high",
+      "expected": "2.53121487687749054868703382037396546439153979769081434556044",
+      "actual": "2.531214876877490548687033820",
+      "absolute_error": "3.73965464391539797690814345560437314805354041074895269234699E-28",
+      "relative_error": "1.47741492754208210551810438784160174383401283655592782464780E-28"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "payback.earliest",
+      "expected": "1.66823063288499635074549056407048274423939109581899697633198",
+      "actual": "1.668230632884996350745490564",
+      "absolute_error": "7.04827442393910958189969763319778959441142737983526222500261E-29",
+      "relative_error": "4.225E-29"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "payback.latest",
+      "expected": "60",
+      "actual": "6E+1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "span.manual_value",
+      "expected": "36720",
+      "actual": "36720.0",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "span.review",
+      "expected": "8046",
+      "actual": "8046.000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_6_minutes",
+      "metric": "span.implementation",
+      "expected": "4000",
+      "actual": "4000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "net.low",
+      "expected": "-4200",
+      "actual": "-4200.00",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "net.high",
+      "expected": "49546",
+      "actual": "49546.000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "roi.low",
+      "expected": "-0.1",
+      "actual": "-0.1",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "roi.high",
+      "expected": "2.53121487687749054868703382037396546439153979769081434556044",
+      "actual": "2.531214876877490548687033820",
+      "absolute_error": "3.73965464391539797690814345560437314805354041074895269234699E-28",
+      "relative_error": "1.47741492754208210551810438784160174383401283655592782464780E-28"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "payback.earliest",
+      "expected": "1.66823063288499635074549056407048274423939109581899697633198",
+      "actual": "1.668230632884996350745490564",
+      "absolute_error": "7.04827442393910958189969763319778959441142737983526222500261E-29",
+      "relative_error": "4.225E-29"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "payback.latest",
+      "expected": "18.4615384615384615384615384615384615384615384615384615384615",
+      "actual": "18.46153846153846153846153846",
+      "absolute_error": "1.53846153846153846153846153846153846153846153846153846153846E-27",
+      "relative_error": "8.33333333333333333333333333333333333333333333333333333333333E-29"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "span.manual_value",
+      "expected": "31320",
+      "actual": "31320.0",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "span.review",
+      "expected": "8046",
+      "actual": "8046.000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "support_7_minutes",
+      "metric": "span.implementation",
+      "expected": "4000",
+      "actual": "4000",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "net.low",
+      "expected": "-1",
+      "actual": "-1.0",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "net.high",
+      "expected": "2",
+      "actual": "2.0",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "roi.low",
+      "expected": "-0.0175438596491228070175438596491228070175438596491228070175439",
+      "actual": "-0.01754385964912280701754385965",
+      "absolute_error": "8.77192982456140350877192982456140350877192982456140350877193E-31",
+      "relative_error": "5E-29"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "roi.high",
+      "expected": "0.0370370370370370370370370370370370370370370370370370370370370",
+      "actual": "0.03703703703703703703703703704",
+      "absolute_error": "2.96296296296296296296296296296296296296296296296296296296296E-30",
+      "relative_error": "8E-29"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "payback.earliest",
+      "expected": "0.8",
+      "actual": "0.8",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "assessment_with_missing_cost_ranges",
+      "metric": "payback.latest",
+      "expected": "1.14285714285714285714285714285714285714285714285714285714286",
+      "actual": "1.142857142857142857142857143",
+      "absolute_error": "1.42857142857142857142857142857142857142857142857142857142857E-28",
+      "relative_error": "1.25E-28"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "net.low",
+      "expected": "11",
+      "actual": "11",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "net.high",
+      "expected": "11",
+      "actual": "11",
+      "absolute_error": "0",
+      "relative_error": "0"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "roi.low",
+      "expected": "0.0582010582010582010582010582010582010582010582010582010582011",
+      "actual": "0.05820105820105820105820105820",
+      "absolute_error": "1.05820105820105820105820105820105820105820105820105820105820E-30",
+      "relative_error": "1.81818181818181818181818181818181818181818181818181818181818E-29"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "roi.high",
+      "expected": "0.0582010582010582010582010582010582010582010582010582010582011",
+      "actual": "0.05820105820105820105820105820",
+      "absolute_error": "1.05820105820105820105820105820105820105820105820105820105820E-30",
+      "relative_error": "1.81818181818181818181818181818181818181818181818181818181818E-29"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "payback.earliest",
+      "expected": "1.47619047619047619047619047619047619047619047619047619047619",
+      "actual": "1.476190476190476190476190476",
+      "absolute_error": "1.90476190476190476190476190476190476190476190476190476190476E-28",
+      "relative_error": "1.29032258064516129032258064516129032258064516129032258064516E-28"
+    },
+    {
+      "case": "rollup_with_shared_costs",
+      "metric": "payback.latest",
+      "expected": "1.47619047619047619047619047619047619047619047619047619047619",
+      "actual": "1.476190476190476190476190476",
+      "absolute_error": "1.90476190476190476190476190476190476190476190476190476190476E-28",
+      "relative_error": "1.29032258064516129032258064516129032258064516129032258064516E-28"
+    }
+  ]
+}

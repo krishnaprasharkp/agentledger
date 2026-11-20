@@ -1,0 +1,46 @@
+# Local environment files and private credential material
+.env
+.env.*
+*.env
+*.env.*
+.envrc
+!*.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies, caches and build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+dist/
+
+# Local databases and evaluation output
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.dump
+*.sql.bak
+*.sql.gz
+pgdata/
+evaluation-report*.json
+
+# Generated releases and archives
+demo-releases/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar

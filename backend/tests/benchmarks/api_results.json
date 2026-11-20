@@ -1,0 +1,193 @@
+{
+  "target": "http://127.0.0.1:8001",
+  "route": "/portfolio/forecasts/preview",
+  "openapi_version": "1.0.0",
+  "required_fields": [
+    "evidence",
+    "implementation_usd",
+    "fixed_model_usd_monthly",
+    "fixed_infrastructure_usd_monthly",
+    "maintenance_usd_monthly",
+    "review_usd_per_unit",
+    "rework_usd_per_unit",
+    "months",
+    "units_monthly",
+    "review_fraction",
+    "rework_fraction",
+    "model_usd_per_unit",
+    "infrastructure_usd_per_unit",
+    "baseline"
+  ],
+  "health_status": "healthy",
+  "seed": 1729,
+  "payload_count": 32,
+  "preflight_count": 32,
+  "warmup_seconds": 5,
+  "target_timed_seconds": 15,
+  "timeout_seconds_httpx": 5,
+  "python": "3.13.5",
+  "client_os": "Windows-11-10.0.26200-SP0",
+  "httpx": "0.28.1",
+  "runs": [
+    {
+      "concurrency": 1,
+      "seconds": 15.004531200043857,
+      "attempts": 1845,
+      "completed_http": 1845,
+      "successful": 1845,
+      "http_completion_per_second": 122.96285538028721,
+      "success_per_second": 122.96285538028721,
+      "error_rate": 0.0,
+      "timeouts": 0,
+      "statuses": {
+        "200": 1845
+      },
+      "server_timing_header_count": 0,
+      "successful_latency_ms": {
+        "p50": 7.396199973300099,
+        "p95": 11.226500035263598,
+        "p99": 23.38580007199198
+      },
+      "warmup": {
+        "concurrency": 1,
+        "seconds": 5.023793600033969,
+        "attempts": 391,
+        "completed_http": 391,
+        "successful": 391,
+        "http_completion_per_second": 77.82963057983835,
+        "success_per_second": 77.82963057983835,
+        "error_rate": 0.0,
+        "timeouts": 0,
+        "statuses": {
+          "200": 391
+        },
+        "server_timing_header_count": 0,
+        "successful_latency_ms": {
+          "p50": 10.262600029818714,
+          "p95": 25.91600001323968,
+          "p99": 62.699000001885
+        }
+      }
+    },
+    {
+      "concurrency": 5,
+      "seconds": 15.012364799971692,
+      "attempts": 2820,
+      "completed_http": 2820,
+      "successful": 2820,
+      "http_completion_per_second": 187.84515548178774,
+      "success_per_second": 187.84515548178774,
+      "error_rate": 0.0,
+      "timeouts": 0,
+      "statuses": {
+        "200": 2820
+      },
+      "server_timing_header_count": 0,
+      "successful_latency_ms": {
+        "p50": 23.750299937091768,
+        "p95": 42.451699962839484,
+        "p99": 72.88670004345477
+      },
+      "warmup": {
+        "concurrency": 5,
+        "seconds": 5.016306399949826,
+        "attempts": 843,
+        "completed_http": 843,
+        "successful": 843,
+        "http_completion_per_second": 168.05193558520105,
+        "success_per_second": 168.05193558520105,
+        "error_rate": 0.0,
+        "timeouts": 0,
+        "statuses": {
+          "200": 843
+        },
+        "server_timing_header_count": 0,
+        "successful_latency_ms": {
+          "p50": 24.923799908719957,
+          "p95": 53.41369996313006,
+          "p99": 116.8098000343889
+        }
+      }
+    },
+    {
+      "concurrency": 10,
+      "seconds": 15.0448290000204,
+      "attempts": 1770,
+      "completed_http": 1770,
+      "successful": 1770,
+      "http_completion_per_second": 117.64839600354381,
+      "success_per_second": 117.64839600354381,
+      "error_rate": 0.0,
+      "timeouts": 0,
+      "statuses": {
+        "200": 1770
+      },
+      "server_timing_header_count": 0,
+      "successful_latency_ms": {
+        "p50": 44.81059999670833,
+        "p95": 335.2583000669256,
+        "p99": 639.5456000464037
+      },
+      "warmup": {
+        "concurrency": 10,
+        "seconds": 5.055018799961545,
+        "attempts": 669,
+        "completed_http": 669,
+        "successful": 669,
+        "http_completion_per_second": 132.3437214526461,
+        "success_per_second": 132.3437214526461,
+        "error_rate": 0.0,
+        "timeouts": 0,
+        "statuses": {
+          "200": 669
+        },
+        "server_timing_header_count": 0,
+        "successful_latency_ms": {
+          "p50": 45.37860001437366,
+          "p95": 238.75690007116646,
+          "p99": 437.8557000309229
+        }
+      }
+    },
+    {
+      "concurrency": 20,
+      "seconds": 15.999622199917212,
+      "attempts": 1483,
+      "completed_http": 1483,
+      "successful": 1483,
+      "http_completion_per_second": 92.68968863575252,
+      "success_per_second": 92.68968863575252,
+      "error_rate": 0.0,
+      "timeouts": 0,
+      "statuses": {
+        "200": 1483
+      },
+      "server_timing_header_count": 0,
+      "successful_latency_ms": {
+        "p50": 117.06670001149178,
+        "p95": 663.6653000023216,
+        "p99": 1124.8420999618247
+      },
+      "warmup": {
+        "concurrency": 20,
+        "seconds": 5.134211799944751,
+        "attempts": 477,
+        "completed_http": 477,
+        "successful": 477,
+        "http_completion_per_second": 92.9061789007483,
+        "success_per_second": 92.9061789007483,
+        "error_rate": 0.0,
+        "timeouts": 0,
+        "statuses": {
+          "200": 477
+        },
+        "server_timing_header_count": 0,
+        "successful_latency_ms": {
+          "p50": 114.91170001681894,
+          "p95": 717.7565000019968,
+          "p99": 1082.2162999538705
+        }
+      }
+    }
+  ]
+}

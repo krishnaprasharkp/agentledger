@@ -1,0 +1,13 @@
+.git
+**/.env
+**/.env.*
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/node_modules
+**/dist
+**/*.sqlite
+**/*.db
+**/evaluation-report*.json
+demo-releases/
+agentledger-*.tar.gz
