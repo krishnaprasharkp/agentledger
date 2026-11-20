@@ -31,8 +31,12 @@ def verify(data, env):
             "The proxy must connect to both dedicated demo networks.")
     require(api.get("read_only") is True and api.get("healthcheck", {}).get("test"),
             "The API must have a read-only root and health check.")
-    require(api.get("command", [])[:2] == ["uvicorn", "main:app"] and
-            {"--no-proxy-headers", "--no-access-log"}.issubset(api["command"]),
+    command = api.get("command", [])
+    require(command[:2] == ["uvicorn", "main:app"] and
+            {"--no-proxy-headers", "--no-access-log"}.issubset(command) and
+            command.count("--workers") == 1 and
+            command[command.index("--workers") + 1:][:1] == ["1"] and
+            not any(arg.startswith("--workers=") for arg in command),
             "The demo must use the audited server command.")
     for service, image_key, memory, cpus, pids in (
         (api, "DEMO_API_IMAGE", 536870912, 0.75, 128),

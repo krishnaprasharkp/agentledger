@@ -21,8 +21,14 @@ COPY --from=dashboard /build/dist /dashboard
 USER app
 EXPOSE 8000
 CMD ["sh", "-ec", "\
+    if [ \"${RENDER:-}\" = true ]; then \
+        case \"${APP_MODE:-}\" in \
+            public_demo|private) : ;; \
+            *) echo 'Render requires an explicit APP_MODE of public_demo or private.' >&2; exit 1 ;; \
+        esac; \
+    fi; \
     if [ \"${APP_MODE:-local}\" = public_demo ]; then \
-        set -- --no-proxy-headers --no-access-log --limit-concurrency 128 --timeout-keep-alive 5; \
+        set -- --workers 1 --no-proxy-headers --no-access-log --limit-concurrency 128 --timeout-keep-alive 5; \
     else \
         python -m migrate; \
     fi; \

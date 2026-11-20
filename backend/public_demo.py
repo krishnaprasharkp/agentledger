@@ -10,7 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 from demo_portfolio import bounds
 from portfolio import ForecastPreview, preview_forecast
-from security import WorkspaceSecurity
+from security import DEMO_PREVIEW_PATH, PublicDemoSecurity, WorkspaceSecurity
 
 
 @lru_cache(maxsize=1)
@@ -50,7 +50,8 @@ def sample_portfolio():
 
 def create_public_demo(static_dir: str = "") -> FastAPI:
     app = FastAPI(openapi_url=None, docs_url=None, redoc_url=None, redirect_slashes=False)
-    app.add_middleware(WorkspaceSecurity, require_key=True, json_limit=16 * 1024)
+    app.add_middleware(WorkspaceSecurity, require_key=True, json_limit=16 * 1024, body_timeout=10)
+    app.add_middleware(PublicDemoSecurity)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_input(_request, _error):
@@ -68,7 +69,7 @@ def create_public_demo(static_dir: str = "") -> FastAPI:
     def portfolio():
         return sample_portfolio()
 
-    app.add_api_route("/demo/forecasts/preview", preview_forecast, methods=["POST"])
+    app.add_api_route(DEMO_PREVIEW_PATH, preview_forecast, methods=["POST"])
 
     if static_dir:
         directory = Path(static_dir)

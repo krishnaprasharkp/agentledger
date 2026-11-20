@@ -4,7 +4,7 @@ services:
     build:
       context: ..
       dockerfile: backend/Dockerfile
-    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--no-proxy-headers", "--no-access-log", "--limit-concurrency", "128", "--timeout-keep-alive", "5"]
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--no-proxy-headers", "--no-access-log", "--limit-concurrency", "128", "--timeout-keep-alive", "5"]
     environment:
       APP_MODE: public_demo
       DATABASE_URL: "sqlite+pysqlite:///:memory:"

@@ -7,7 +7,8 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 load_dotenv()
 
-DATABASE_URL = os.environ["DATABASE_URL"]
+# The demo imports shared models but never needs a connection to a workspace database.
+DATABASE_URL = "sqlite+pysqlite:///:memory:" if os.getenv("APP_MODE") == "public_demo" else os.environ["DATABASE_URL"]
 
 engine = create_engine(
     DATABASE_URL,
